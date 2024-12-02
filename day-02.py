@@ -1038,4 +1038,14 @@ for d in data:
         safe += 1
 
 
+print(
+    sum(
+        (
+            is_safe(d)
+            or any(is_safe(dd) for dd in [d[:i] + d[i + 1 :] for i in range(len(d))])
+        )
+        for d in data
+    )
+)
+
 print(safe)
