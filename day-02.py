@@ -1034,12 +1034,8 @@ def is_safe(to_check):
 for d in data:
     if is_safe(d):
         safe += 1
-    else:
-        for i in range(len(d)):
-            dd = d[:i] + d[i + 1 :]
-            if is_safe(dd):
-                safe += 1
-                break
+    elif any((is_safe(dd) for dd in [d[:i] + d[i + 1 :] for i in range(len(d))])):
+        safe += 1
 
 
 print(safe)
