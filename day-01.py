@@ -1,3 +1,5 @@
+# Part 1
+
 pairs = [
     [40094, 37480],
     [52117, 14510],
@@ -1005,6 +1007,8 @@ a, b = list(zip(*pairs))
 a, b = sorted(a), sorted(b)
 
 print(sum((abs(x - y) for x, y in zip(a, b))))
+
+# Part 2
 
 from collections import Counter
 
